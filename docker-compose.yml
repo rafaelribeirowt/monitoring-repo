@@ -53,15 +53,13 @@ services:
 
   # ── Prometheus: armazena métricas ──
   prometheus:
-    image: prom/prometheus:v2.53.0
+    build: ./prometheus
     container_name: prometheus
     restart: unless-stopped
     volumes:
-      - ./prometheus/prometheus.yml:/etc/prometheus-config/prometheus.yml:ro
-      - ./prometheus/alerts.yml:/etc/prometheus-config/alerts.yml:ro
       - prometheus_data:/prometheus
     command:
-      - "--config.file=/etc/prometheus-config/prometheus.yml"
+      - "--config.file=/etc/prometheus/prometheus.yml"
       - "--storage.tsdb.path=/prometheus"
       - "--storage.tsdb.retention.time=${PROMETHEUS_RETENTION:-30d}"
       - "--web.console.libraries=/etc/prometheus/console_libraries"
@@ -77,7 +75,7 @@ services:
 
   # ── Grafana: dashboard visual ──
   grafana:
-    image: grafana/grafana:11.1.0
+    build: ./grafana
     container_name: grafana
     restart: unless-stopped
     environment:
@@ -85,13 +83,9 @@ services:
       - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD:-admin}
       - GF_USERS_ALLOW_SIGN_UP=false
       - GF_SERVER_ROOT_URL=${GRAFANA_ROOT_URL:-http://localhost:3001}
-      - GF_PATHS_PROVISIONING=/etc/grafana-config/provisioning
-      - GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH=/etc/grafana-config/provisioning/dashboards/docker-monitoring.json
+      - GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH=/etc/grafana/provisioning/dashboards/docker-monitoring.json
     volumes:
       - grafana_data:/var/lib/grafana
-      - ./grafana/provisioning/datasources/prometheus.yml:/etc/grafana-config/provisioning/datasources/prometheus.yml:ro
-      - ./grafana/provisioning/dashboards/dashboard.yml:/etc/grafana-config/provisioning/dashboards/dashboard.yml:ro
-      - ./grafana/provisioning/dashboards/docker-monitoring.json:/etc/grafana-config/provisioning/dashboards/docker-monitoring.json:ro
     ports:
       - "${GRAFANA_PORT:-3001}:3000"
     depends_on:
