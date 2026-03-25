@@ -29,6 +29,11 @@ services:
       - /var/lib/docker/:/var/lib/docker:ro
       - /dev/disk/:/dev/disk:ro
       - /var/run:/var/run:rw
+    command:
+      - "--docker_only=true"
+      - "--housekeeping_interval=30s"
+      - "--disable_metrics=advtcp,cpu_topology,cpuset,hugetlb,memory_numa,process,referenced_memory,resctrl,tcp,udp"
+      - "--store_container_labels=true"
     ports:
       - "${CADVISOR_PORT:-8080}:8080"
     networks:
