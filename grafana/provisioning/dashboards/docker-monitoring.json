@@ -15,7 +15,7 @@
     {
       "title": "CPU do host",
       "type": "gauge",
-      "datasource": { "type": "prometheus" },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
       "gridPos": { "h": 6, "w": 6, "x": 0, "y": 1 },
       "fieldConfig": {
         "defaults": {
@@ -39,7 +39,7 @@
     {
       "title": "Memória do host",
       "type": "gauge",
-      "datasource": { "type": "prometheus" },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
       "gridPos": { "h": 6, "w": 6, "x": 6, "y": 1 },
       "fieldConfig": {
         "defaults": {
@@ -63,7 +63,7 @@
     {
       "title": "Disco do host",
       "type": "gauge",
-      "datasource": { "type": "prometheus" },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
       "gridPos": { "h": 6, "w": 6, "x": 12, "y": 1 },
       "fieldConfig": {
         "defaults": {
@@ -87,7 +87,7 @@
     {
       "title": "Uptime",
       "type": "stat",
-      "datasource": { "type": "prometheus" },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
       "gridPos": { "h": 6, "w": 6, "x": 18, "y": 1 },
       "fieldConfig": {
         "defaults": {
@@ -103,7 +103,7 @@
     {
       "title": "Memória total / disponível",
       "type": "stat",
-      "datasource": { "type": "prometheus" },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
       "gridPos": { "h": 4, "w": 8, "x": 0, "y": 7 },
       "fieldConfig": {
         "defaults": { "unit": "bytes" },
@@ -120,7 +120,7 @@
     {
       "title": "Containers rodando",
       "type": "stat",
-      "datasource": { "type": "prometheus" },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
       "gridPos": { "h": 4, "w": 8, "x": 8, "y": 7 },
       "fieldConfig": {
         "defaults": {
@@ -135,7 +135,7 @@
     {
       "title": "Tráfego total de rede",
       "type": "stat",
-      "datasource": { "type": "prometheus" },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
       "gridPos": { "h": 4, "w": 8, "x": 16, "y": 7 },
       "fieldConfig": {
         "defaults": {
@@ -157,7 +157,7 @@
     {
       "title": "Uso de CPU por container (%)",
       "type": "timeseries",
-      "datasource": { "type": "prometheus" },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
       "gridPos": { "h": 9, "w": 24, "x": 0, "y": 12 },
       "fieldConfig": {
         "defaults": {
@@ -183,7 +183,7 @@
     {
       "title": "Uso de memória por container",
       "type": "timeseries",
-      "datasource": { "type": "prometheus" },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
       "gridPos": { "h": 9, "w": 16, "x": 0, "y": 22 },
       "fieldConfig": {
         "defaults": {
@@ -203,7 +203,7 @@
     {
       "title": "Top 10 - Memória (atual)",
       "type": "bargauge",
-      "datasource": { "type": "prometheus" },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
       "gridPos": { "h": 9, "w": 8, "x": 16, "y": 22 },
       "fieldConfig": {
         "defaults": {
@@ -236,7 +236,7 @@
     {
       "title": "Download (RX) por container",
       "type": "timeseries",
-      "datasource": { "type": "prometheus" },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
       "gridPos": { "h": 8, "w": 12, "x": 0, "y": 32 },
       "fieldConfig": {
         "defaults": {
@@ -256,7 +256,7 @@
     {
       "title": "Upload (TX) por container",
       "type": "timeseries",
-      "datasource": { "type": "prometheus" },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
       "gridPos": { "h": 8, "w": 12, "x": 12, "y": 32 },
       "fieldConfig": {
         "defaults": {
@@ -282,7 +282,7 @@
     {
       "title": "Leitura de disco por container",
       "type": "timeseries",
-      "datasource": { "type": "prometheus" },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
       "gridPos": { "h": 8, "w": 12, "x": 0, "y": 41 },
       "fieldConfig": {
         "defaults": {
@@ -301,7 +301,7 @@
     {
       "title": "Escrita de disco por container",
       "type": "timeseries",
-      "datasource": { "type": "prometheus" },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
       "gridPos": { "h": 8, "w": 12, "x": 12, "y": 41 },
       "fieldConfig": {
         "defaults": {
@@ -326,7 +326,7 @@
     {
       "title": "Alertas do Prometheus",
       "type": "alertlist",
-      "datasource": { "type": "prometheus" },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
       "gridPos": { "h": 6, "w": 24, "x": 0, "y": 50 },
       "options": {
         "showOptions": "current",
